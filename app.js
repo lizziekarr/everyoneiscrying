@@ -1,7 +1,12 @@
 (function(){
 
-alert('hi')
+$(window).scroll(function(){
 
+console.log('hi')
+
+});
+
+/*
 if (jQuery) {
 alert(“jquery is loaded”);
 } else {
@@ -18,16 +23,5 @@ $(document).ready(function(){
   });
 
 });
-
-$(window).scroll(function(){
-
-console.log('hi')
-
-});
-
+*/
 })();
-
-
-
-
-//credits: Andrew, Sheepduh, Rich Davis
