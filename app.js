@@ -1,27 +1,60 @@
 (function(){
 
+$(document).ready(function(){
+
+
 $(window).scroll(function(){
 
-console.log('hi')
+  var wScroll = $(this).scrollTop();
+
+  if(wScroll > $('.cartoons').offset().top - ($(window).height() / 1.2)) {
+    $('.cartoons figure').each(function(i){
+      setTimeout(function() {
+      $('.cartoons figure').eq(i).addClass('is-showing');
+    }, 150 * (i+1));
+    });
+  }
 
 });
 
-/*
-if (jQuery) {
-alert(“jquery is loaded”);
-} else {
-alert(” Not loaded”);
-}
+$('.eat').on('click', function(){
+  $('.crying').fadeOut();
+  $('.snacks').fadeIn();
+});
 
-$(document).ready(function(){
-  console.log('hi')
-  alert('hi')
-  //geolocation event handler
-  $('button').on('click', function(){
-    alert('works')
-    $(this).fadeOut();
-  });
+$('.cry').on('click', function(){
+  $('.snacks').fadeOut();
+  $('.crying').fadeIn();
+});
+$('.goat').on('click', function(){
+  $('.snacks').fadeOut();
+  $('.crying').fadeOut();
+  $('.is-goat').fadeIn();
+});
+
+$('.sit').on('click', function(){
+  $('.cartoons img').removeClass('is-framed');
+  $('.cartoons img').removeClass('is-flipping');
+  $('.cartoons').removeClass('is-disco');
+});
+
+$('.flip').on('click', function(){
+  $('.cartoons img').toggleClass('is-flipping');
+});
+
+$('.ferris').on('click', function(){
+  $('.cartoons').toggleClass('is-ferris');
+});
+
+$('.disco').on('click', function(){
+  $('.cartoons').toggleClass('is-disco');
+});
+
+$('.framed').on('click', function(){
+  $('.cartoons img').toggleClass('is-framed');
+});
+
 
 });
-*/
+
 })();

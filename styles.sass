@@ -62,8 +62,8 @@ header
 		repeat: no-repeat
 
 
-section
-	height: 4000px
+.cartoons
+	height: 1500px
 	position: relative
 	top: -200px
 	h3
@@ -71,27 +71,38 @@ section
 		text-align: right
 		font:
 			size: 1.2vw
-			weight: normal
 		line-height: 1.5
-		top: 12%
+		width: 15%
+		top: 45%
 		color: grey
-		margin-right: 5%
+		margin-left: 80%
 		z-index: 100
+		cursor: pointer
+		&:hover
+			background-color: grey
+			color: white
 
 	.crying
 		width: 70%
 		margin-left: 15%
 		height: 1000px
 		position: relative
-		//animation: disco 2s ease-in 2s infinite
 		//transition: transform 3s ease-in-out
 		&:hover
 			//transform: translate(200px, 150px) rotate(360deg)
 		figure
 			+figure-display
+			opacity: 0
+			transform: translateX(-20px)
+
+			&.is-showing
+				opacity: 1
+				transform: translateX(0px)
+				transition: all .6s ease-in-out
 
 
 	.snacks
+		display: none
 		width: 70%
 		margin-left: 15%
 		height: 1000px
@@ -99,26 +110,49 @@ section
 		figure
 			+figure-display
 
+	.is-goat
+		display: none
+
 img
 	width: 80%
 	height: 80%
 	padding: 12%
-	//animation: framed 2s ease-in 2s infinite
+
+.active
+	font-weight: bold
+
+.is-flipping
+	animation: flip 3s ease-in-out 0s infinite alternate
+
+.is-ferris
+	animation: flip 10s ease-in-out 0s
+
+.is-disco
+	animation: disco 2s ease-in 0s infinite
+
+.is-framed
+	animation: framed 2s ease-in 0s infinite
+
+@keyframes flip
+	from
+		transform: translate(0, 0) rotate(0deg)
+	to
+		transform: translate(200px, 150px) rotate(360deg)
 
 
 @keyframes disco
 	0%
-		background: yellow
+		background: #FF00FF
 	20%
-		background: pink
+		background: #FF8000
 	40%
-		background: blue
+		background: #FFFF00
 	60%
-		background: green
+		background: #FFF
 	80%
-		background: black
+		background: #80FF00
 	100%
-		background: purple
+		background: black
 
 @keyframes framed
 	from
