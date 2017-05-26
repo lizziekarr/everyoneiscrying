@@ -35,37 +35,43 @@ header
 		repeat: no-repeat
 	overflow: hidden
 	.pic-one
-		height: 25vh
-		width: 100%
-		position: absolute
-		//background:
-		//	image: url("https://s3-us-west-2.amazonaws.com/lizzie-dad-site/zig-zag.jpg")
-	.pic-two
 		top: 58vh
 		height: 30vh
 		width: 100%
 		position: absolute
 		background:
 			image: url("http://www.clker.com/cliparts/7/V/c/l/0/3/blackgrass-hi.png")
-	.pic-three
+		z-index: 100
+	.pic-two
 		top: 34vh
 		right: 3vw
 		height: 40vh
 		width: 35vw
 		position: absolute
 		repeat: no-repeat
-	.pic-four
+	.pic-three
 		top: 12vh
 		left: 5vw
 		height: 50vh
 		width: 25vw
 		repeat: no-repeat
+		z-index: -150
 
 
 .cartoons
 	height: 1500px
 	position: relative
 	top: -200px
+	h2
+		position: relative
+		text-align: right
+		font:
+			size: 1.2vw
+		line-height: 1.5
+		width: 15%
+		top: 35%
+		color: grey
+		margin-left: 80%
 	h3
 		position: relative
 		text-align: right
@@ -73,7 +79,7 @@ header
 			size: 1.2vw
 		line-height: 1.5
 		width: 15%
-		top: 45%
+		top: 35%
 		color: grey
 		margin-left: 80%
 		z-index: 100
@@ -81,6 +87,8 @@ header
 		&:hover
 			background-color: grey
 			color: white
+		&.active
+			color: #247EA5
 
 	.crying
 		width: 70%
@@ -99,7 +107,6 @@ header
 				opacity: 1
 				transform: translateX(0px)
 				transition: all .6s ease-in-out
-
 
 	.snacks
 		display: none
@@ -133,6 +140,9 @@ img
 .is-framed
 	animation: framed 2s ease-in 0s infinite
 
+.is-shrinking
+	animation: shrink 3s ease-in-out infinite
+
 @keyframes flip
 	from
 		transform: translate(0, 0) rotate(0deg)
@@ -159,3 +169,9 @@ img
 		background: orange
 	to
 		background: pink
+
+@keyframes shrink
+	from
+		width: 100%
+	to
+		width: 25%
